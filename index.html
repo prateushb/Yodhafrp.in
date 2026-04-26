@@ -4,140 +4,109 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>YODHA | FRP Manhole Covers</title>
+<meta name="description" content="YODHA FRP Manhole Covers for homes and roads. Available in white, grey, terracotta, and black. Strong, rust-free and long-lasting.">
 
 <style>
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  color: #333;
-  scroll-behavior: smooth;
-}
+body {margin:0; font-family:'Segoe UI', sans-serif; color:#333;}
 
-/* HEADER */
 header {
-  position: sticky;
-  top: 0;
-  background: white;
-  padding: 12px 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  z-index: 1000;
+  position:sticky; top:0; background:white; padding:12px 30px;
+  display:flex; justify-content:space-between; align-items:center;
+  box-shadow:0 2px 6px rgba(0,0,0,0.1);
 }
 
-header img {
-  height: 50px;
-}
+header img {height:50px;}
 
 .btn {
-  padding: 10px 20px;
-  background: #2F80ED;
-  color: white;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: 0.3s;
+  padding:10px 20px; background:#2F80ED; color:white;
+  border-radius:6px; text-decoration:none;
 }
 
-.btn:hover {
-  background: #1c60c9;
-}
-
-/* HERO */
 .hero {
-  height: 90vh;
-  background: url('hero.png') center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
+  height:90vh;
+  background:url('hero.png') center/cover no-repeat;
+  display:flex; align-items:center; justify-content:center;
+  color:white; text-align:center;
 }
 
 .hero-content {
-  background: rgba(0,0,0,0.5);
-  padding: 40px;
-  border-radius: 12px;
-  animation: fadeIn 1s ease;
+  background:rgba(0,0,0,0.5);
+  padding:40px; border-radius:12px;
 }
 
-.hero h1 {
-  font-size: 42px;
-}
-
-/* SECTIONS */
-.section {
-  padding: 70px 20px;
-  text-align: center;
-}
-
-.light { background: #ffffff; }
-.grey { background: #f5f7fa; }
+.section {padding:60px 20px; text-align:center;}
+.grey {background:#f5f7fa;}
 
 .grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  display:flex; flex-wrap:wrap; justify-content:center; gap:25px;
 }
 
-.card {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  width: 170px;
-  transition: 0.3s;
+.product {
+  background:white; padding:15px;
+  border-radius:10px; width:220px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.1);
 }
 
-.card:hover {
-  transform: translateY(-5px);
+.product img {
+  width:100%; border-radius:10px;
+  cursor:pointer;
+  transition:0.3s;
 }
 
-/* PRODUCTS */
-.products img {
-  width: 220px;
-  border-radius: 12px;
-  transition: 0.3s;
+.product img:hover {
+  transform:scale(1.05);
 }
 
-.products img:hover {
-  transform: scale(1.05);
+.product p {
+  font-weight:600;
+  margin:10px 0;
 }
 
-/* CONTACT */
-.contact {
-  font-size: 18px;
-  line-height: 1.6;
+.whatsapp-btn {
+  display:inline-block;
+  margin-top:8px;
+  background:#25D366;
+  color:white;
+  padding:8px 12px;
+  border-radius:5px;
+  text-decoration:none;
+  font-size:14px;
 }
 
-/* FOOTER */
 footer {
-  background: #2F80ED;
-  color: white;
-  text-align: center;
-  padding: 20px;
+  background:#2F80ED;
+  color:white;
+  text-align:center;
+  padding:20px;
 }
 
-/* WHATSAPP BUTTON */
 .whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  color: white;
-  padding: 14px 18px;
-  border-radius: 50px;
-  font-size: 16px;
-  text-decoration: none;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:white;
+  padding:14px;
+  border-radius:50px;
+  text-decoration:none;
 }
 
-/* ANIMATION */
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(20px);}
-  to {opacity: 1; transform: translateY(0);}
+/* Popup */
+.popup {
+  display:none;
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.8);
+  justify-content:center;
+  align-items:center;
+}
+
+.popup img {
+  max-width:90%;
+  max-height:90%;
 }
 </style>
 
@@ -146,7 +115,7 @@ footer {
 <body>
 
 <header>
-  <img src="LOGO.png" alt="YODHA Logo">
+  <img src="LOGO.png">
   <a href="tel:8288800008" class="btn">Call Now</a>
 </header>
 
@@ -154,62 +123,63 @@ footer {
   <div class="hero-content">
     <h1>Safe. Strong. Reliable.</h1>
     <p>FRP Manhole Covers for Homes & Roads</p>
-    <a href="tel:8288800008" class="btn">Get Price</a>
   </div>
 </section>
 
-<section class="section light">
-  <h2>Designed for Every Space</h2>
-  <p>Perfect for home sewer chambers, residential buildings, roads and commercial use</p>
-</section>
+<section class="section">
+  <h2>Our Products & Color Variants</h2>
+  <p>Available in multiple colors</p>
 
-<section class="section grey">
-  <h2>Why Choose YODHA?</h2>
   <div class="grid">
-    <div class="card">High Strength</div>
-    <div class="card">Rust-Free</div>
-    <div class="card">Long Life</div>
-    <div class="card">Lightweight</div>
-    <div class="card">Easy Installation</div>
-    <div class="card">Reliable Safety</div>
-  </div>
-</section>
 
-<section class="section light">
-  <h2>Our Products</h2>
-  <div class="grid products">
-    <img src="product1.jpg" alt="Product 1">
-    <img src="product2.png" alt="Product 2">
-    <img src="product3.png" alt="Product 3">
-    <img src="product4.png" alt="Product 4">
+```
+<div class="product">
+  <img src="product1.jpg" onclick="openPopup(this.src)">
+  <p>White</p>
+  <a href="https://wa.me/918288800008?text=I want White FRP Cover" class="whatsapp-btn">Enquire</a>
+</div>
+
+<div class="product">
+  <img src="product2.png" onclick="openPopup(this.src)">
+  <p>Grey</p>
+  <a href="https://wa.me/918288800008?text=I want Grey FRP Cover" class="whatsapp-btn">Enquire</a>
+</div>
+
+<div class="product">
+  <img src="product3.png" onclick="openPopup(this.src)">
+  <p>Terracotta</p>
+  <a href="https://wa.me/918288800008?text=I want Terracotta FRP Cover" class="whatsapp-btn">Enquire</a>
+</div>
+
+<div class="product">
+  <img src="product.png" onclick="openPopup(this.src)">
+  <p>Black</p>
+  <a href="https://wa.me/918288800008?text=I want Black FRP Cover" class="whatsapp-btn">Enquire</a>
+</div>
+```
+
   </div>
 </section>
 
 <section class="section grey">
   <h2>Available Sizes</h2>
-  <div class="grid">
-    <div class="card">10 x 10</div>
-    <div class="card">12 x 12</div>
-    <div class="card">15 x 15</div>
-    <div class="card">18 x 18</div>
-    <div class="card">18 x 24</div>
-    <div class="card">21 x 21</div>
-    <div class="card">24 x 24</div>
-  </div>
+  <p>10x10, 12x12, 15x15, 18x18, 18x24, 21x21, 24x24</p>
 </section>
 
-<section class="section light">
-  <h2>Become a Dealer</h2>
-  <p>Join YODHA and grow your business with a high-demand product</p>
-  <a href="tel:8288800008" class="btn">Apply Now</a>
+<section class="section">
+  <h2>Get Quote / Become Dealer</h2>
+  <form action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST">
+    <input type="text" name="name" placeholder="Name" required><br><br>
+    <input type="tel" name="phone" placeholder="Phone" required><br><br>
+    <input type="text" name="city" placeholder="City"><br><br>
+    <button type="submit" class="btn">Submit</button>
+  </form>
 </section>
 
-<section class="section grey contact">
-  <h2>Contact Us</h2>
-  <p><strong>Shree Balaji Industries</strong></p>
-  <p>Plot No. 117, Industrial Area, Mehatpur</p>
-  <p>District Una, Himachal Pradesh – 174315</p>
-  <p>📞 8288800008 | 8679518000 | 9915081016</p>
+<section class="section grey">
+  <h2>Our Location</h2>
+  <iframe src="https://www.google.com/maps?q=Mehatpur,Una,Himachal+Pradesh&output=embed"
+  width="90%" height="300"></iframe>
 </section>
 
 <footer>
@@ -217,6 +187,20 @@ footer {
 </footer>
 
 <a href="https://wa.me/918288800008" class="whatsapp">Chat</a>
+
+<div class="popup" id="popup" onclick="closePopup()">
+  <img id="popup-img">
+</div>
+
+<script>
+function openPopup(src) {
+  document.getElementById("popup").style.display = "flex";
+  document.getElementById("popup-img").src = src;
+}
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+}
+</script>
 
 </body>
 </html>
