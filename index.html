@@ -6,23 +6,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>YODHA | FRP Manhole Covers</title>
-<meta name="description" content="YODHA FRP Manhole Covers for homes and roads. Strong, rust-free, long-lasting. Available in multiple colors.">
+<meta name="description" content="YODHA FRP Manhole Covers for homes, sewer chambers and roads. Strong, rust-free, long-lasting. Available in multiple colors.">
 
 <style>
 body {margin:0; font-family:'Segoe UI', sans-serif; color:#333;}
 
 header {
-  position:sticky; top:0; background:white; padding:12px 20px;
+  position:sticky; top:0; background:white; padding:12px 30px;
   display:flex; justify-content:space-between; align-items:center;
   box-shadow:0 2px 6px rgba(0,0,0,0.1); z-index:1000;
 }
 
-header img {height:45px;}
+header img {height:50px;}
 
 .btn {
-  padding:10px 18px; background:#2F80ED; color:white;
-  border-radius:6px; text-decoration:none; font-size:14px;
+  padding:10px 20px; background:#2F80ED; color:white;
+  border-radius:6px; text-decoration:none; transition:0.3s;
 }
+
+.btn:hover {background:#1c60c9;}
 
 .hero {
   height:90vh;
@@ -33,72 +35,79 @@ header img {height:45px;}
 
 .hero-content {
   background:rgba(0,0,0,0.5);
-  padding:40px;
-  border-radius:12px;
+  padding:40px; border-radius:12px;
+  animation:fadeIn 1s ease;
 }
 
 .section {padding:60px 20px; text-align:center;}
 .grey {background:#f5f7fa;}
 
 .grid {
-  display:flex; flex-wrap:wrap; justify-content:center; gap:20px;
+  display:flex; flex-wrap:wrap; justify-content:center; gap:25px;
 }
 
 .card {
-  background:white; padding:15px;
-  border-radius:10px; width:140px;
+  background:white; padding:20px;
+  border-radius:12px;
   box-shadow:0 2px 6px rgba(0,0,0,0.1);
+  width:150px;
   font-weight:600;
+  transition:0.3s;
 }
+
+.card:hover {transform:translateY(-5px);}
 
 .product {
   background:white; padding:15px;
-  border-radius:10px; width:200px;
+  border-radius:10px; width:220px;
   box-shadow:0 2px 6px rgba(0,0,0,0.1);
 }
 
 .product img {
-  width:100%;
-  border-radius:10px;
+  width:100%; border-radius:10px;
   cursor:pointer;
+  transition:0.3s;
 }
+
+.product img:hover {transform:scale(1.05);}
 
 .product p {font-weight:600; margin:10px 0;}
 
 .whatsapp-btn {
   background:#25D366; color:white;
-  padding:6px 10px; border-radius:5px;
-  text-decoration:none; font-size:13px;
+  padding:8px 12px; border-radius:5px;
+  text-decoration:none; font-size:14px;
 }
 
 footer {
   background:#2F80ED;
   color:white;
   text-align:center;
-  padding:15px;
+  padding:20px;
 }
 
+/* floating buttons */
 .whatsapp {
   position:fixed;
   bottom:20px; right:20px;
   background:#25D366;
   color:white;
-  padding:12px;
+  padding:14px;
   border-radius:50px;
   text-decoration:none;
 }
 
 .callbtn {
   position:fixed;
-  bottom:75px; right:20px;
+  bottom:80px; right:20px;
   background:#2F80ED;
   color:white;
-  padding:12px;
+  padding:14px;
   border-radius:50px;
   text-decoration:none;
 }
 
-/* POPUP */
+/* popup */
 .popup {
   display:none;
   position:fixed;
@@ -114,30 +123,10 @@ footer {
   max-height:90%;
 }
 
-/* MOBILE FIX */
-@media (max-width:768px) {
-
-  .hero {
-    height:60vh;
-    background-position:center top;
-  }
-
-  .hero-content {
-    padding:20px;
-  }
-
-  .hero h1 {
-    font-size:24px;
-  }
-
-  .hero p {
-    font-size:14px;
-  }
-
-  header img {height:40px;}
-
-  .btn {font-size:12px; padding:8px 14px;}
-
+/* animation */
+@keyframes fadeIn {
+  from {opacity:0; transform:translateY(20px);}
+  to {opacity:1; transform:translateY(0);}
 }
 </style>
 
@@ -147,43 +136,46 @@ footer {
 
 <header>
   <img src="LOGO.png">
-  <a href="tel:8288800008" class="btn">Call</a>
+  <a href="tel:8288800008" class="btn">Call Now</a>
 </header>
 
 <section class="hero">
   <div class="hero-content">
     <h1>Safe. Strong. Reliable.</h1>
     <p>FRP Manhole Covers for Homes & Roads</p>
+    <a href="tel:8288800008" class="btn">Get Price</a>
   </div>
 </section>
 
 <section class="section">
   <h2>Our Products & Color Variants</h2>
+  <p>Available in multiple colors</p>
+
   <div class="grid">
 
 ```
 <div class="product">
   <img src="product1.jpg" onclick="openPopup(this.src)">
   <p>White</p>
-  <a href="https://wa.me/918288800008?text=White Cover" class="whatsapp-btn">Enquire</a>
+  <a href="https://wa.me/918288800008?text=I want White FRP Cover" class="whatsapp-btn">Enquire</a>
 </div>
 
 <div class="product">
   <img src="product2.png" onclick="openPopup(this.src)">
   <p>Grey</p>
-  <a href="https://wa.me/918288800008?text=Grey Cover" class="whatsapp-btn">Enquire</a>
+  <a href="https://wa.me/918288800008?text=I want Grey FRP Cover" class="whatsapp-btn">Enquire</a>
 </div>
 
 <div class="product">
   <img src="product3.png" onclick="openPopup(this.src)">
   <p>Terracotta</p>
-  <a href="https://wa.me/918288800008?text=Terracotta Cover" class="whatsapp-btn">Enquire</a>
+  <a href="https://wa.me/918288800008?text=I want Terracotta FRP Cover" class="whatsapp-btn">Enquire</a>
 </div>
 
 <div class="product">
   <img src="product.png" onclick="openPopup(this.src)">
   <p>Black</p>
-  <a href="https://wa.me/918288800008?text=Black Cover" class="whatsapp-btn">Enquire</a>
+  <a href="https://wa.me/918288800008?text=I want Black FRP Cover" class="whatsapp-btn">Enquire</a>
 </div>
 ```
 
@@ -193,37 +185,56 @@ footer {
 <section class="section grey">
   <h2>Available Sizes</h2>
   <div class="grid">
-    <div class="card">10x10</div>
-    <div class="card">12x12</div>
-    <div class="card">15x15</div>
-    <div class="card">18x18</div>
-    <div class="card">18x24</div>
-    <div class="card">21x21</div>
-    <div class="card">24x24</div>
+    <div class="card">10 x 10</div>
+    <div class="card">12 x 12</div>
+    <div class="card">15 x 15</div>
+    <div class="card">18 x 18</div>
+    <div class="card">18 x 24</div>
+    <div class="card">21 x 21</div>
+    <div class="card">24 x 24</div>
   </div>
 </section>
 
 <section class="section">
   <h2>Contact & Enquiry</h2>
 
-  <div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
+  <div style="display:flex; flex-wrap:wrap; gap:30px; justify-content:center;">
 
 ```
-<div style="flex:1; min-width:260px; max-width:350px; background:#fff; padding:20px; border-radius:10px;">
+<!-- FORM -->
+<div style="flex:1; min-width:280px; max-width:400px; background:#fff; padding:25px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+  <h3>Get Quote / Dealership</h3>
+
   <form action="https://formsubmit.co/bansaltradershimachal@gmail.com" method="POST">
-    <input type="text" name="name" placeholder="Name" required style="width:100%; padding:10px; margin-bottom:8px;"><br>
-    <input type="tel" name="phone" placeholder="Phone" required style="width:100%; padding:10px; margin-bottom:8px;"><br>
-    <button class="btn" style="width:100%;">Submit</button>
+
+    <input type="text" name="name" placeholder="Your Name" required style="width:100%; padding:12px; margin-bottom:10px; border-radius:6px; border:1px solid #ddd;">
+
+    <input type="tel" name="phone" placeholder="Phone Number" required style="width:100%; padding:12px; margin-bottom:10px; border-radius:6px; border:1px solid #ddd;">
+
+    <input type="text" name="city" placeholder="City" style="width:100%; padding:12px; margin-bottom:10px; border-radius:6px; border:1px solid #ddd;">
+
+    <select name="type" style="width:100%; padding:12px; margin-bottom:15px; border-radius:6px; border:1px solid #ddd;">
+      <option>Inquiry Type</option>
+      <option>Purchase</option>
+      <option>Dealership</option>
+    </select>
+
+    <button type="submit" class="btn" style="width:100%;">Submit</button>
   </form>
 </div>
 
-<div style="flex:1; min-width:260px;">
+<!-- CONTACT + MAP -->
+<div style="flex:1; min-width:280px; max-width:450px; text-align:left;">
+  <h3>Contact Details</h3>
   <p><strong>Shree Balaji Industries</strong></p>
   <p>C86W+2W Mehatpur, Himachal Pradesh</p>
-  <p>📞 8288800008</p>
+  <p><strong>📞 8288800008<br>📞 8679518000<br>📞 9915081016</strong></p>
 
-  <iframe src="https://www.google.com/maps?q=C86W+2W+Mehatpur+Himachal+Pradesh&output=embed"
-  width="100%" height="200" style="border:0;"></iframe>
+  <iframe 
+    src="https://www.google.com/maps?q=C86W+2W+Mehatpur+Himachal+Pradesh&output=embed"
+    width="100%" height="250"
+    style="border:0; border-radius:10px; margin-top:10px;">
+  </iframe>
 </div>
 ```
 
