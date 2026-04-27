@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="google-site-verification" content="tgsmGdDN1UsoeHfVD6yW8AQenyu-SlN7rBYsctmgGpI" />
+<meta name="google-site-verification" content="tgsmGdDN1UsoeHfVD6yW8AQenyu-SlN7rBYsctmgGpI" />
 
 <title>YODHA | FRP Manhole Covers</title>
 <meta name="description" content="YODHA FRP Manhole Covers for homes, sewer chambers and roads. Strong, rust-free, long-lasting. Available in multiple colors.">
@@ -24,20 +24,22 @@ header img {height:50px;}
   padding:10px 20px; background:#2F80ED; color:white;
   border-radius:6px; text-decoration:none; transition:0.3s;
 }
-
 .btn:hover {background:#1c60c9;}
 
+/* HERO DESKTOP */
 .hero {
   height:90vh;
   background:url('hero.png') center/cover no-repeat;
-  display:flex; align-items:center; justify-content:center;
-  color:white; text-align:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  text-align:center;
 }
 
 .hero-content {
   background:rgba(0,0,0,0.5);
   padding:40px; border-radius:12px;
-  animation:fadeIn 1s ease;
 }
 
 .section {padding:60px 20px; text-align:center;}
@@ -55,7 +57,6 @@ header img {height:50px;}
   font-weight:600;
   transition:0.3s;
 }
-
 .card:hover {transform:translateY(-5px);}
 
 .product {
@@ -69,7 +70,6 @@ header img {height:50px;}
   cursor:pointer;
   transition:0.3s;
 }
-
 .product img:hover {transform:scale(1.05);}
 
 .product p {font-weight:600; margin:10px 0;}
@@ -118,16 +118,28 @@ footer {
   justify-content:center;
   align-items:center;
 }
-
 .popup img {
   max-width:90%;
   max-height:90%;
 }
 
-/* animation */
-@keyframes fadeIn {
-  from {opacity:0; transform:translateY(20px);}
-  to {opacity:1; transform:translateY(0);}
+/* MOBILE HERO (DUAL IMAGE) */
+@media (max-width:768px) {
+
+  .hero {
+    height:70vh;
+    background:url('hero-mobile.png') center/cover no-repeat;
+  }
+
+  .hero-content {
+    background:rgba(0,0,0,0.6);
+    padding:20px;
+    border-radius:10px;
+  }
+
+  .hero h1 {font-size:24px;}
+  .hero p {font-size:14px;}
+
 }
 </style>
 
@@ -207,34 +219,30 @@ footer {
   <h3>Get Quote / Dealership</h3>
 
   <form action="https://formsubmit.co/bansaltradershimachal@gmail.com" method="POST">
-
     <input type="text" name="name" placeholder="Your Name" required style="width:100%; padding:12px; margin-bottom:10px; border-radius:6px; border:1px solid #ddd;">
-
     <input type="tel" name="phone" placeholder="Phone Number" required style="width:100%; padding:12px; margin-bottom:10px; border-radius:6px; border:1px solid #ddd;">
-
     <input type="text" name="city" placeholder="City" style="width:100%; padding:12px; margin-bottom:10px; border-radius:6px; border:1px solid #ddd;">
-
     <select name="type" style="width:100%; padding:12px; margin-bottom:15px; border-radius:6px; border:1px solid #ddd;">
       <option>Inquiry Type</option>
       <option>Purchase</option>
       <option>Dealership</option>
     </select>
-
     <button type="submit" class="btn" style="width:100%;">Submit</button>
   </form>
 </div>
 
-<!-- CONTACT + MAP -->
+<!-- CONTACT -->
 <div style="flex:1; min-width:280px; max-width:450px; text-align:left;">
   <h3>Contact Details</h3>
   <p><strong>Shree Balaji Industries</strong></p>
-<p>Plot No. 58B & 117, Industrial Area</p>
-<p>Mehatpur, District Una</p>
-<p>Himachal Pradesh – 174315</p>
-<p><strong>📞 8288800008<br>📞 8679518000<br>📞 9915081016</strong></p>
+  <p>Plot No. 58B & 117, Industrial Area</p>
+  <p>Mehatpur, District Una</p>
+  <p>Himachal Pradesh – 174315</p>
+  <p><strong>📞 8288800008<br>📞 8679518000<br>📞 9915081016</strong></p>
 
   <iframe 
-   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253.0889561659238!2d76.34737120364373!3d31.41011609639814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391acf26abf1b799%3A0xbab06d8f0aada2e1!2sSHREE%20BALAJI%20INDUSTRIES!5e0!3m2!1sen!2sin!4v1777209072188!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253.0889561659238!2d76.34737120364373!3d31.41011609639814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391acf26abf1b799%3A0xbab06d8f0aada2e1!2sSHREE%20BALAJI%20INDUSTRIES!5e0!3m2!1sen!2sin!4v1777209072188!5m2!1sen!2sin"
+  width="100%" height="250" style="border:0; border-radius:10px;">
   </iframe>
 </div>
 ```
