@@ -4,142 +4,50 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google-site-verification" content="tgsmGdDN1UsoeHfVD6yW8AQenyu-SlN7rBYsctmgGpI" />
 
 <title>YODHA | FRP Manhole Covers</title>
-<meta name="description" content="YODHA FRP Manhole Covers for homes, sewer chambers and roads. Strong, rust-free, long-lasting. Available in multiple colors.">
+<meta name="description" content="YODHA FRP Manhole Covers – Strong, rust-free, lightweight covers for homes, sewer chambers & roads.">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
-body {margin:0; font-family:'Segoe UI', sans-serif; color:#333;}
+body{margin:0;font-family:Poppins,sans-serif;color:#1a1a2e}
 
-header {
-  position:sticky; top:0; background:white; padding:12px 30px;
-  display:flex; justify-content:space-between; align-items:center;
-  box-shadow:0 2px 6px rgba(0,0,0,0.1); z-index:1000;
-}
+/* NAV */
+nav{position:fixed;top:0;width:100%;background:#fff;padding:12px 5%;display:flex;justify-content:space-between;align-items:center;z-index:1000;box-shadow:0 2px 10px rgba(0,0,0,0.1)}
+.logo{font-weight:800;font-size:20px}
+.nav-cta{background:#ff6b35;color:#fff;padding:8px 18px;border-radius:20px;text-decoration:none}
 
-header img {height:50px;}
+/* HERO */
+.hero{padding:120px 5% 80px;background:linear-gradient(135deg,#1a5f7a,#134b61);color:#fff;text-align:center}
+.hero h1{font-size:40px;margin-bottom:10px}
+.hero p{opacity:0.9}
+.hero img{width:260px;margin-top:30px}
 
-.btn {
-  padding:10px 20px; background:#2F80ED; color:white;
-  border-radius:6px; text-decoration:none; transition:0.3s;
-}
-.btn:hover {background:#1c60c9;}
+/* PRODUCTS */
+.products{padding:60px 5%;text-align:center}
+.grid{display:flex;flex-wrap:wrap;gap:20px;justify-content:center}
+.product{width:200px;background:#fff;padding:15px;border-radius:10px;box-shadow:0 5px 20px rgba(0,0,0,0.1)}
+.product img{width:100%;border-radius:8px}
+.product p{font-weight:600}
+.btn{background:#25D366;color:#fff;padding:6px 10px;border-radius:5px;text-decoration:none;font-size:13px}
 
-/* HERO DESKTOP */
-.hero {
-  height:90vh;
-  background:url('hero.png') center/cover no-repeat;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:white;
-  text-align:center;
-}
+/* CONTACT */
+.contact{background:#1a1a2e;color:#fff;padding:60px 5%}
+.contact-grid{display:flex;flex-wrap:wrap;gap:30px}
+.form{flex:1;min-width:260px}
+.form input,.form textarea{width:100%;padding:12px;margin-bottom:10px;border-radius:6px;border:none}
+.form button{background:#00bfa6;color:#fff;padding:12px;border:none;width:100%;border-radius:6px}
+.info{flex:1;min-width:260px}
 
-.hero-content {
-  background:rgba(0,0,0,0.5);
-  padding:40px; border-radius:12px;
-}
+/* FLOAT */
+.whatsapp{position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;padding:12px;border-radius:50px;text-decoration:none}
+.call{position:fixed;bottom:80px;right:20px;background:#ff6b35;color:#fff;padding:12px;border-radius:50px;text-decoration:none}
 
-.section {padding:60px 20px; text-align:center;}
-.grey {background:#f5f7fa;}
-
-.grid {
-  display:flex; flex-wrap:wrap; justify-content:center; gap:25px;
-}
-
-.card {
-  background:white; padding:20px;
-  border-radius:12px;
-  box-shadow:0 2px 6px rgba(0,0,0,0.1);
-  width:150px;
-  font-weight:600;
-  transition:0.3s;
-}
-.card:hover {transform:translateY(-5px);}
-
-.product {
-  background:white; padding:15px;
-  border-radius:10px; width:220px;
-  box-shadow:0 2px 6px rgba(0,0,0,0.1);
-}
-
-.product img {
-  width:100%; border-radius:10px;
-  cursor:pointer;
-  transition:0.3s;
-}
-.product img:hover {transform:scale(1.05);}
-
-.product p {font-weight:600; margin:10px 0;}
-
-.whatsapp-btn {
-  background:#25D366; color:white;
-  padding:8px 12px; border-radius:5px;
-  text-decoration:none; font-size:14px;
-}
-
-footer {
-  background:#2F80ED;
-  color:white;
-  text-align:center;
-  padding:20px;
-}
-
-/* floating buttons */
-.whatsapp {
-  position:fixed;
-  bottom:20px; right:20px;
-  background:#25D366;
-  color:white;
-  padding:14px;
-  border-radius:50px;
-  text-decoration:none;
-}
-
-.callbtn {
-  position:fixed;
-  bottom:80px; right:20px;
-  background:#2F80ED;
-  color:white;
-  padding:14px;
-  border-radius:50px;
-  text-decoration:none;
-}
-
-/* popup */
-.popup {
-  display:none;
-  position:fixed;
-  top:0; left:0;
-  width:100%; height:100%;
-  background:rgba(0,0,0,0.8);
-  justify-content:center;
-  align-items:center;
-}
-.popup img {
-  max-width:90%;
-  max-height:90%;
-}
-
-/* MOBILE HERO (DUAL IMAGE) */
-@media (max-width:768px) {
-
-  .hero {
-    height:90vh;
-    background:url('mobile-hero.png') center/cover no-repeat;
-  }
-
-  .hero-content {
-    background:rgba(0,0,0,0.6);
-    padding:20px;
-    border-radius:10px;
-  }
-
-  .hero h1 {font-size:24px;}
-  .hero p {font-size:14px;}
-
+/* MOBILE */
+@media(max-width:768px){
+.hero h1{font-size:26px}
 }
 </style>
 
@@ -147,128 +55,74 @@ footer {
 
 <body>
 
-<header>
-  <img src="LOGO.png">
-  <a href="tel:8288800008" class="btn">Call Now</a>
-</header>
+<nav>
+<div class="logo">YODHA</div>
+<a href="tel:8288800008" class="nav-cta">Call Now</a>
+</nav>
 
 <section class="hero">
-  <div class="hero-content">
-    <h1>Safe. Strong. Reliable.</h1>
-    <p>FRP Manhole Covers for Homes & Roads</p>
-    <a href="tel:8288800008" class="btn">Get Price</a>
-  </div>
+<h1>Next-Gen FRP Manhole Covers</h1>
+<p>Safe • Strong • Reliable</p>
+<img src="hero-mobile.png">
 </section>
 
-<section class="section">
-  <h2>Our Products & Color Variants</h2>
-  <p>Available in multiple colors</p>
+<section class="products">
+<h2>Our Products</h2>
+<div class="grid">
 
-  <div class="grid">
-
-```
 <div class="product">
-  <img src="product1.jpg" onclick="openPopup(this.src)">
-  <p>White</p>
-  <a href="https://wa.me/918288800008?text=I want White FRP Cover" class="whatsapp-btn">Enquire</a>
+<img src="product1.jpg">
+<p>White</p>
+<a href="https://wa.me/918288800008" class="btn">Enquire</a>
 </div>
 
 <div class="product">
-  <img src="product2.png" onclick="openPopup(this.src)">
-  <p>Grey</p>
-  <a href="https://wa.me/918288800008?text=I want Grey FRP Cover" class="whatsapp-btn">Enquire</a>
+<img src="product2.png">
+<p>Grey</p>
+<a href="https://wa.me/918288800008" class="btn">Enquire</a>
 </div>
 
 <div class="product">
-  <img src="product3.png" onclick="openPopup(this.src)">
-  <p>Terracotta</p>
-  <a href="https://wa.me/918288800008?text=I want Terracotta FRP Cover" class="whatsapp-btn">Enquire</a>
+<img src="product3.png">
+<p>Terracotta</p>
+<a href="https://wa.me/918288800008" class="btn">Enquire</a>
 </div>
 
 <div class="product">
-  <img src="product4.png" onclick="openPopup(this.src)">
-  <p>Black</p>
-  <a href="https://wa.me/918288800008?text=I want Black FRP Cover" class="whatsapp-btn">Enquire</a>
+<img src="product4.png">
+<p>Black</p>
+<a href="https://wa.me/918288800008" class="btn">Enquire</a>
 </div>
-```
 
-  </div>
+</div>
 </section>
 
-<section class="section grey">
-  <h2>Available Sizes</h2>
-  <div class="grid">
-    <div class="card">10 x 10</div>
-    <div class="card">12 x 12</div>
-    <div class="card">15 x 15</div>
-    <div class="card">18 x 18</div>
-    <div class="card">18 x 24</div>
-    <div class="card">21 x 21</div>
-    <div class="card">24 x 24</div>
-  </div>
+<section class="contact">
+<div class="contact-grid">
+
+<div class="form">
+<h3>Get Quote</h3>
+<form action="https://formsubmit.co/bansaltradershimachal@gmail.com" method="POST">
+<input type="text" placeholder="Name" required>
+<input type="tel" placeholder="Phone" required>
+<textarea placeholder="Requirement"></textarea>
+<button type="submit">Submit</button>
+</form>
+</div>
+
+<div class="info">
+<h3>Contact</h3>
+<p>Shree Balaji Industries</p>
+<p>Mehatpur, Una, Himachal Pradesh</p>
+<p>📞 8288800008</p>
+
+<iframe src="https://www.google.com/maps?q=Mehatpur%20Una&output=embed" width="100%" height="200"></iframe>
+</div>
+
+</div>
 </section>
 
-<section class="section">
-  <h2>Contact & Enquiry</h2>
-
-  <div style="display:flex; flex-wrap:wrap; gap:30px; justify-content:center;">
-
-```
-<!-- FORM -->
-<div style="flex:1; min-width:280px; max-width:400px; background:#fff; padding:25px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
-  <h3>Get Quote / Dealership</h3>
-
-  <form action="https://formsubmit.co/bansaltradershimachal@gmail.com" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required style="width:100%; padding:12px; margin-bottom:10px; border-radius:6px; border:1px solid #ddd;">
-    <input type="tel" name="phone" placeholder="Phone Number" required style="width:100%; padding:12px; margin-bottom:10px; border-radius:6px; border:1px solid #ddd;">
-    <input type="text" name="city" placeholder="City" style="width:100%; padding:12px; margin-bottom:10px; border-radius:6px; border:1px solid #ddd;">
-    <select name="type" style="width:100%; padding:12px; margin-bottom:15px; border-radius:6px; border:1px solid #ddd;">
-      <option>Inquiry Type</option>
-      <option>Purchase</option>
-      <option>Dealership</option>
-    </select>
-    <button type="submit" class="btn" style="width:100%;">Submit</button>
-  </form>
-</div>
-
-<!-- CONTACT -->
-<div style="flex:1; min-width:280px; max-width:450px; text-align:left;">
-  <h3>Contact Details</h3>
-  <p><strong>Shree Balaji Industries</strong></p>
-  <p>Plot No. 58B & 117, Industrial Area</p>
-  <p>Mehatpur, District Una</p>
-  <p>Himachal Pradesh – 174315</p>
-  <p><strong>📞 8288800008<br>📞 8679518000<br>📞 9915081016</strong></p>
-
-  <iframe 
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253.0889561659238!2d76.34737120364373!3d31.41011609639814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391acf26abf1b799%3A0xbab06d8f0aada2e1!2sSHREE%20BALAJI%20INDUSTRIES!5e0!3m2!1sen!2sin!4v1777209072188!5m2!1sen!2sin"
-  width="100%" height="250" style="border:0; border-radius:10px;">
-  </iframe>
-</div>
-```
-
-  </div>
-</section>
-
-<footer>
-  <p>© YODHA | Built to Bear</p>
-</footer>
-
-<a href="tel:8288800008" class="callbtn">Call</a> <a href="https://wa.me/918288800008" class="whatsapp">Chat</a>
-
-<div class="popup" id="popup" onclick="closePopup()">
-  <img id="popup-img">
-</div>
-
-<script>
-function openPopup(src){
-  document.getElementById("popup").style.display="flex";
-  document.getElementById("popup-img").src=src;
-}
-function closePopup(){
-  document.getElementById("popup").style.display="none";
-}
-</script>
+<a href="tel:8288800008" class="call">Call</a> <a href="https://wa.me/918288800008" class="whatsapp">Chat</a>
 
 </body>
 </html>
