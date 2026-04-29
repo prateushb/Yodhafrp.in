@@ -80,6 +80,38 @@
             font-weight: 600;
             transition: transform 0.3s, box-shadow 0.3s;
         }
+        /* HERO SIDE IMAGE LAYOUT */
+.hero-container {
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 40px;
+width: 100%;
+}
+
+.hero-image img {
+width: 420px;
+max-width: 100%;
+border-radius: 12px;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+
+```
+.hero-container {
+    flex-direction: column;
+    text-align: center;
+}
+
+.hero-image img {
+    width: 100%;
+    margin-top: 20px;
+}
+```
+
+}
+
 
         .nav-cta:hover {
             transform: translateY(-2px);
@@ -870,31 +902,30 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-content">
-            <div class="hero-badge">🏆 Leading FRP Manufacturer in India</div>
-            <h1>YODHA <span>FRP Manhole</span> Covers</h1>
-            <p>Lightweight, corrosion-resistant, and built to last. Yodha FRP manhole covers combine superior engineering with unmatched durability for modern infrastructure.</p>
-            <div class="hero-buttons">
-                <a href="#products" class="btn-primary">
-                    Explore Products <i class="fas fa-arrow-right"></i>
-                </a>
-                <a href="#contact" class="btn-secondary">Request Quote</a>
-            </div>
-            <div class="hero-stats">
-                <div class="stat">
-                    <h3>10+</h3>
-                    <p>Years Experience</p>
-                </div>
-                <div class="stat">
-                    <h3>50K+</h3>
-                    <p>Units Delivered</p>
-                </div>
-                <div class="stat">
-                    <h3>500+</h3>
-                    <p>Happy Clients</p>
-                </div>
-            </div>
-        </div>
+       ```
+<!-- LEFT TEXT -->
+<div class="hero-content">
+  <div class="hero-badge">🏆 Leading FRP Manufacturer in India</div>
+  <h1>YODHA <span>FRP Manhole</span> Covers</h1>
+  <p>Lightweight, corrosion-resistant, and built to last.</p>
+
+  <div class="hero-buttons">
+    <a href="#products" class="btn-primary">Explore Products</a>
+    <a href="#contact" class="btn-secondary">Request Quote</a>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat"><h3>50K+</h3><p>Units Delivered</p></div>
+    <div class="stat"><h3>500+</h3><p>Happy Clients</p></div>
+  </div>
+</div>
+
+<!-- RIGHT IMAGE -->
+<div class="hero-image">
+  <img src="hero.png" alt="YODHA FRP Cover">
+</div>
+```
+
     </section>
 
     <!-- About FRP Section -->
