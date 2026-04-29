@@ -83,17 +83,29 @@
         /* HERO SIDE IMAGE LAYOUT */
 .hero-container {
 display: flex;
-align-items: center;
+align-items: center;   /* vertical center fix */
 justify-content: space-between;
-gap: 40px;
-width: 100%;
+gap: 60px;
+max-width: 1200px;
+margin: auto;
+}
+
+.hero-content {
+flex: 1;
+}
+
+.hero-image {
+flex: 1;
+display: flex;
+justify-content: center;
 }
 
 .hero-image img {
-width: 420px;
-max-width: 100%;
+width: 100%;
+max-width: 450px;
 border-radius: 12px;
 }
+
 
 /* MOBILE FIX */
 @media (max-width: 768px) {
@@ -902,7 +914,6 @@ border-radius: 12px;
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-       ```
 <!-- LEFT TEXT -->
 <div class="hero-content">
   <div class="hero-badge">🏆 Leading FRP Manufacturer in India</div>
