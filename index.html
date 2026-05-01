@@ -510,6 +510,26 @@ object-fit: contain;
         .comparison {
             background: var(--light);
         }
+/* Center all columns */
+.comparison-table th,
+.comparison-table td {
+text-align: center;
+vertical-align: middle;
+}
+
+/* Keep first column (Feature) left aligned */
+.comparison-table th:first-child,
+.comparison-table td:first-child {
+text-align: left;
+}
+
+/* Perfect icon centering */
+.comparison-table td i {
+display: inline-flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+}
 
         .comparison-table {
             max-width: 900px;
@@ -529,7 +549,6 @@ object-fit: contain;
             background: var(--primary);
             color: white;
             padding: 20px;
-            text-align: left;
             font-weight: 600;
         }
 
@@ -1138,10 +1157,12 @@ object-fit: contain;
                     <th>Yodha FRP</th>
                     <th>Cast Iron</th>
                     <th>Concrete</th>
+                    <th>LDPE</th>
                 </tr>
                 <tr>
                     <td>Corrosion Resistant</td>
                     <td><i class="fas fa-check check"></i></td>
+                    <td><i class="fas fa-times cross"></i></td>
                     <td><i class="fas fa-times cross"></i></td>
                     <td><i class="fas fa-times cross"></i></td>
                 </tr>
@@ -1150,17 +1171,20 @@ object-fit: contain;
                     <td><i class="fas fa-check check"></i></td>
                     <td><i class="fas fa-times cross"></i></td>
                     <td><i class="fas fa-times cross"></i></td>
+                    <td><i class="fas fa-times check"></i></td>
                 </tr>
                 <tr>
                     <td>Theft-Proof</td>
                     <td><i class="fas fa-check check"></i></td>
                     <td><i class="fas fa-times cross"></i></td>
                     <td><i class="fas fa-check check"></i></td>
+                    <td><i class="fas fa-check cross"></i></td>
                 </tr>
                 <tr>
                     <td>Electrical Insulation</td>
                     <td><i class="fas fa-check check"></i></td>
                     <td><i class="fas fa-times cross"></i></td>
+                    <td><i class="fas fa-check check"></i></td>
                     <td><i class="fas fa-check check"></i></td>
                 </tr>
                 <tr>
@@ -1168,10 +1192,12 @@ object-fit: contain;
                     <td><i class="fas fa-check check"></i></td>
                     <td><i class="fas fa-times cross"></i></td>
                     <td><i class="fas fa-times cross"></i></td>
+                    <td><i class="fas fa-times check"></i></td>
                 </tr>
                 <tr>
                     <td>25+ Year Lifespan</td>
                     <td><i class="fas fa-check check"></i></td>
+                    <td><i class="fas fa-times cross"></i></td>
                     <td><i class="fas fa-times cross"></i></td>
                     <td><i class="fas fa-times cross"></i></td>
                 </tr>
