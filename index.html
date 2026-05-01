@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yodha FRP | Premium FRP Manhole Covers</title>
     <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap)" rel="stylesheet">
-    <link rel="stylesheet" href="[cdnjs.cloudflare.com](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -443,34 +443,31 @@ object-fit: contain;
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 30px;
-            max-width: 1200px;
+            max-width: 800px;
             margin: 0 auto;
         }
 
-        .product-card {
-background: linear-gradient(135deg, #1a5f7a, #134b61);
-color: white; /* makes text visible */
+          .product-card {
+background: #ff671f;   /* full card white */
 border-radius: 20px;
-padding: 25px;
-box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+padding: 0;            /* important */
+overflow: hidden;
+box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
-        }
-
         .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            transform: translateY(-15px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.20);
         }
 
        .product-image {
-height: 180px;
-display: flex;
-align-items: center;
-justify-content: center;
-overflow: hidden;
-border-radius: 20px 20px 0 0;
+    background: #ffffff;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .product-image img {
@@ -481,7 +478,7 @@ object-fit: contain;
 
 
         .product-content {
-            padding: 30px;
+            padding: 25px;
         }
 
         .product-content h3 {
@@ -490,8 +487,8 @@ object-fit: contain;
         }
 
         .product-content p {
-            color: var(--gray);
-            font-size: 0.95rem;
+            color: var(--black);
+            font-size: 0.98rem;
             margin-bottom: 20px;
         }
 
@@ -1117,7 +1114,7 @@ object-fit: contain;
         <h3>Color Options</h3>
         <p>Choose from a variety of attractive color finishes that complement your environment while maintaining durability.</p>
         <div class="product-specs">
-          <span class="spec-tag" style="background:#ffffff; color:white;">White</span>
+          <span class="spec-tag" style="background:#ffffff; color:black;">White</span>
           <span class="spec-tag" style="background:#B65A3A; color:white;">Terracotta</span>
           <span class="spec-tag" style="background:#555; color:white;">Grey</span>
           <span class="spec-tag" style="background:#000; color:white;">Black</span>
