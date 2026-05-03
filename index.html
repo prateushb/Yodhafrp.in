@@ -1402,15 +1402,17 @@ grid-template-columns: 1fr;
         </div>
     </div>
 
-    <!-- RIGHT SIDE FORM -->
-<!-- FORM -->
+  
+<!-- RIGHT SIDE FORM -->
 
-<form action="https://docs.google.com/forms/d/e/1FAIpQLSd0LCHu_FeJQsEkwN3CjFGq5LdwJ7sfnaq4TPd9vHXpuag4pw/formResponse"
+<div class="cta-form">
+
+<form class="modern-form"
+      action="https://docs.google.com/forms/d/e/1FAIpQLSd0LCHu_FeJQsEkwN3CjFGq5LdwJ7sfnaq4TPd9vHXpuag4pw/formResponse"
       method="POST"
       target="hidden_iframe"
       onsubmit="handleSubmit(event)">
 
-```
 <div class="form-row">
     <input type="text" id="name" name="entry.2005620554" placeholder="Your Name" required>
     <input type="tel" id="phone" name="entry.1166974658" placeholder="Phone Number" required>
@@ -1425,10 +1427,10 @@ grid-template-columns: 1fr;
 </div>
 
 <button type="submit">Get Quote</button>
-```
 
 </form>
 
+</div>
 <!-- HIDDEN IFRAME -->
 
 <iframe name="hidden_iframe" style="display:none;"></iframe>
@@ -1463,7 +1465,7 @@ function handleSubmit(e) {
 
     // ✅ RESET FORM AFTER DELAY
     setTimeout(() => {
-        document.querySelector("form").reset();
+        document.querySelector(".modern-form").reset();
     }, 1000);
 }
 
