@@ -6,6 +6,12 @@
     <title>Yodha FRP | Premium FRP Manhole Covers</title>
     <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap)" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+(function(){
+    emailjs.init("e0E4UsG7afQ2B9ZmR");
+})();
+</script>
     <style>
         * {
             margin: 0;
@@ -1397,20 +1403,20 @@ grid-template-columns: 1fr;
     </div>
 
     <!-- RIGHT SIDE FORM -->
-    <div class="cta-form">
-    <form class="modern-form">
+  <div class="cta-form">
+    <form class="modern-form" onsubmit="sendMail(event)">
 
     <div class="form-row">
-        <input type="text" placeholder="Your Name" required>
-        <input type="tel" placeholder="Phone Number" required>
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="tel" id="phone" placeholder="Phone Number" required>
     </div>
 
     <div class="form-row">
-        <input type="email" placeholder="Email Address" required>
+        <input type="email" id="email" placeholder="Email Address" required>
     </div>
 
     <div class="form-row">
-        <textarea placeholder="Your Requirement"></textarea>
+        <textarea id="message" placeholder="Your Requirement"></textarea>
     </div>
 
     <button type="submit">Get Quote</button>
@@ -1418,6 +1424,58 @@ grid-template-columns: 1fr;
 </form>
 
 </div>
+
+<!-- EmailJS Script -->
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+(function(){
+    emailjs.init("e0E4UsG7afQ2B9ZmR"); 
+})();
+
+function sendMail(e) {
+    e.preventDefault();
+
+    let params = {
+        name: document.getElementById("name").value,
+        phone: document.getElementById("phone").value,
+        email: document.getElementById("email").value,
+        message: document.getElementById("message").value
+    };
+
+    emailjs.send("service_52xcfof", "template_tnhthkl", params)
+    .then(function(res) {
+        showSuccess();
+        document.querySelector(".modern-form").reset();
+    })
+    .catch(function(err) {
+        alert("❌ Failed to send. Try again.");
+        console.log(err);
+    });
+}
+
+// ✅ Clean success popup (better than alert)
+function showSuccess() {
+    let popup = document.createElement("div");
+    popup.innerHTML = "✅ Inquiry Sent Successfully!";
+    popup.style.position = "fixed";
+    popup.style.top = "20px";
+    popup.style.right = "20px";
+    popup.style.background = "#00bfa6";
+    popup.style.color = "white";
+    popup.style.padding = "15px 25px";
+    popup.style.borderRadius = "10px";
+    popup.style.boxShadow = "0 10px 30px rgba(0,0,0,0.2)";
+    popup.style.zIndex = "9999";
+
+    document.body.appendChild(popup);
+
+    setTimeout(() => {
+        popup.remove();
+    }, 3000);
+}
+</script>
 
 
 </section>
