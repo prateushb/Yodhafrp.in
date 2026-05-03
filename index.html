@@ -1405,37 +1405,46 @@ grid-template-columns: 1fr;
     <!-- RIGHT SIDE FORM -->
 <!-- FORM -->
 
-<form class="modern-form" onsubmit="sendMail(event)">
+<form action="https://docs.google.com/forms/d/e/1FAIpQLSd0LCHu_FeJQsEkwN3CjFGq5LdwJ7sfnaq4TPd9vHXpuag4pw/formResponse"
+      method="POST"
+      target="hidden_iframe"
+      onsubmit="handleSubmit(event)">
 
+```
 <div class="form-row">
-    <input type="text" id="name" placeholder="Your Name" required>
-    <input type="tel" id="phone" placeholder="Phone Number" required>
+    <input type="text" id="name" name="entry.2005620554" placeholder="Your Name" required>
+    <input type="tel" id="phone" name="entry.1166974658" placeholder="Phone Number" required>
 </div>
 
 <div class="form-row">
-    <input type="email" id="email" placeholder="Email Address" required>
+    <input type="email" id="email" name="entry.1045781291" placeholder="Email Address" required>
 </div>
 
 <div class="form-row">
-    <textarea id="message" placeholder="Your Requirement"></textarea>
+    <textarea id="message" name="entry.839337160" placeholder="Your Requirement"></textarea>
 </div>
 
 <button type="submit">Get Quote</button>
+```
 
 </form>
 
-<!-- EMAILJS SCRIPT -->
+<!-- HIDDEN IFRAME -->
+
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
+<!-- EMAILJS -->
 
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
 <script>
 (function(){
-    emailjs.init("e0E4UsG7afQ2B9ZmR"); // 🔁 replace
+    emailjs.init("e0E4UsG7afQ2B9ZmR"); // 🔴 replace
 })();
 
-function sendMail(e) {
-    e.preventDefault();
+function handleSubmit(e) {
 
+    // 👉 GET VALUES
     let name = document.getElementById("name").value;
     let phone = document.getElementById("phone").value;
     let email = document.getElementById("email").value;
@@ -1449,25 +1458,13 @@ function sendMail(e) {
         message: message
     });
 
-    // ✅ SAVE TO GOOGLE SHEET
-    let formURL = "https://docs.google.com/forms/d/e/1FAIpQLSd0LCHu_FeJQsEkwN3CjFGq5LdwJ7sfnaq4TPd9vHXpuag4pw/formResponse";
-
-    let formData = new FormData();
-    formData.append("entry.2005620554", name);
-    formData.append("entry.1166974658", phone);
-    formData.append("entry.1045781291", email);
-    formData.append("entry.839337160", message);
-
-    fetch(formURL, {
-        method: "POST",
-        mode: "no-cors",
-        body: formData
-    });
-
     // ✅ SUCCESS POPUP
     showSuccess();
 
-    document.querySelector(".modern-form").reset();
+    // ✅ RESET FORM AFTER DELAY
+    setTimeout(() => {
+        document.querySelector("form").reset();
+    }, 1000);
 }
 
 function showSuccess() {
@@ -1486,59 +1483,6 @@ function showSuccess() {
     document.body.appendChild(popup);
 
     setTimeout(() => popup.remove(), 3000);
-}
-</script>
-
-
-<!-- EmailJS Script -->
-
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-
-<script>
-(function(){
-    emailjs.init("e0E4UsG7afQ2B9ZmR"); 
-})();
-
-function sendMail(e) {
-    e.preventDefault();
-
-    let params = {
-        name: document.getElementById("name").value,
-        phone: document.getElementById("phone").value,
-        email: document.getElementById("email").value,
-        message: document.getElementById("message").value
-    };
-
-    emailjs.send("service_52xcfof", "template_tnhthkl", params)
-    .then(function(res) {
-        showSuccess();
-        document.querySelector(".modern-form").reset();
-    })
-    .catch(function(err) {
-        alert("❌ Failed to send. Try again.");
-        console.log(err);
-    });
-}
-
-// ✅ Clean success popup (better than alert)
-function showSuccess() {
-    let popup = document.createElement("div");
-    popup.innerHTML = "✅ Inquiry Sent Successfully!";
-    popup.style.position = "fixed";
-    popup.style.top = "20px";
-    popup.style.right = "20px";
-    popup.style.background = "#00bfa6";
-    popup.style.color = "white";
-    popup.style.padding = "15px 25px";
-    popup.style.borderRadius = "10px";
-    popup.style.boxShadow = "0 10px 30px rgba(0,0,0,0.2)";
-    popup.style.zIndex = "9999";
-
-    document.body.appendChild(popup);
-
-    setTimeout(() => {
-        popup.remove();
-    }, 3000);
 }
 </script>
 
