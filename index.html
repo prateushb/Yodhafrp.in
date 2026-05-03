@@ -117,7 +117,6 @@ border-radius: 16px;
 /* MOBILE FIX */
 @media (max-width: 768px) {
 
-```
 .hero-container {
     flex-direction: column;
     text-align: center;
@@ -127,10 +126,8 @@ border-radius: 16px;
     width: 100%;
     margin-top: 20px;
 }
-```
 
 }
-
 
         .nav-cta:hover {
             transform: translateY(-2px);
@@ -649,98 +646,133 @@ width: 100%;
         }
 
         /* CTA Section */
-        .cta {
-            background: linear-gradient(135deg, var(--secondary) 0%, #e55a2b 100%);
-            text-align: center;
-            color: white;
-        }
+    
+.cta {
+background: linear-gradient(135deg, var(--secondary) 0%, #e55a2b 100%);
+color: white;
+padding: 80px 5%;
+}
 
-        .cta h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
+/* GRID LAYOUT */
+.cta-container {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 60px;
+align-items: center;
+}
 
-        .cta p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 30px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+/* LEFT CONTENT */
+.cta-content {
+text-align: left;
+}
 
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
+.cta h2 {
+font-size: 2.5rem;
+margin-bottom: 20px;
+}
 
-        .cta .btn-primary {
-            background: white;
-            color: var(--secondary);
-        }
+.cta p {
+font-size: 1.2rem;
+opacity: 0.9;
+margin-bottom: 30px;
+}
 
-        .cta .btn-secondary {
-            border-color: white;
-            color: white;
-        }
+/* BUTTONS */
+.cta-buttons {
+display: flex;
+gap: 20px;
+flex-wrap: wrap;
+}
 
-        .cta .btn-secondary:hover {
-            background: white;
-            color: var(--secondary);
-        }
-              .form-group {
-            margin-bottom: 20px;
-        }
+.cta .btn-primary {
+background: white;
+color: var(--secondary);
+}
 
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 15px 20px;
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 10px;
-            background: rgba(255,255,255,0.05);
-            color: white;
-            font-family: inherit;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
+.cta .btn-secondary {
+border: 2px solid white;
+color: white;
+}
 
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent);
-        }
+.cta .btn-secondary:hover {
+background: white;
+color: var(--secondary);
+}
 
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: rgba(255,255,255,0.5);
-        }
+/* FORM CARD */
+.cta-form {
+background: white;
+padding: 30px;
+border-radius: 15px;
+box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
 
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
+/* FORM GROUP */
+.form-group {
+margin-bottom: 15px;
+}
 
-        .submit-btn {
-            width: 100%;
-            padding: 15px;
-            background: var(--accent);
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-family: inherit;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
+/* INPUTS */
+.form-group input,
+.form-group textarea {
+width: 100%;
+padding: 14px;
+border-radius: 8px;
+border: 1px solid #ddd;
+background: #f8f9fa;
+color: #333;
+font-size: 14px;
+outline: none;
+}
 
-        .submit-btn:hover {
-            background: #00a896;
-            transform: translateY(-2px);
-        }
+/* PLACEHOLDER */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+color: #777;
+}
+
+/* TEXTAREA */
+.form-group textarea {
+resize: vertical;
+min-height: 100px;
+}
+
+/* BUTTON */
+.submit-btn {
+width: 100%;
+padding: 14px;
+background: var(--accent);
+color: white;
+border: none;
+border-radius: 8px;
+font-size: 1rem;
+font-weight: 600;
+cursor: pointer;
+transition: 0.3s;
+}
+
+.submit-btn:hover {
+background: #00a896;
+transform: translateY(-2px);
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+.cta-container {
+grid-template-columns: 1fr;
+}
+
+
+.cta-content {
+    text-align: center;
+}
+
+.cta-buttons {
+    justify-content: center;
+}
+
+}
+
 
         /* Contact Section */
         .contact {
@@ -1256,11 +1288,10 @@ width: 100%;
     </section>
 
     <!-- CTA Section -->
-   <section class="cta">
+     <section class="cta">
     <div class="cta-container">
 
-```
-    <!-- LEFT SIDE (TEXT - KEEP YOUR CONTENT) -->
+    <!-- LEFT SIDE -->
     <div class="cta-content">
         <h2>Ready to Upgrade Your Inventory?</h2>
         <p>Get a custom quote for your requirement. Our team will help you choose the right FRP solution.</p>
@@ -1273,7 +1304,7 @@ width: 100%;
         </div>
     </div>
 
-    <!-- RIGHT SIDE (FORM) -->
+    <!-- RIGHT SIDE FORM -->
     <div class="cta-form">
         <form>
             <input type="text" placeholder="Your Name" required>
@@ -1286,6 +1317,7 @@ width: 100%;
 
 </div>
 
+
 </section>
 
 
@@ -1293,7 +1325,6 @@ width: 100%;
    <section class="contact" id="contact">
     <div class="contact-grid">
 
-```
     <!-- LEFT SIDE TEXT -->
     <div class="contact-info">
         <h3>Get In Touch</h3>
