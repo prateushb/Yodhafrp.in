@@ -172,10 +172,12 @@ filter: blur(40px);
         }
 
         .hero-content {
-            max-width: 600px;
-            color: white;
-            z-index: 1;
-        }
+    flex: 1;
+    max-width: 600px;
+    color: white;
+    z-index: 1;
+}
+    
 
         .hero-badge {
             display: inline-block;
@@ -923,10 +925,11 @@ grid-template-columns: 1fr;
         grid-template-columns: 1fr;
     }
 
-    .contact-map {
-        height: 250px;
-    }
+   .contact-map iframe {
+    height: 320px;
 }
+    }
+
        
         /* Footer */
         footer {
@@ -1006,18 +1009,7 @@ grid-template-columns: 1fr;
             color: rgba(255,255,255,0.5);
             font-size: 0.9rem;
         }
-
-        /* Mobile Menu */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--dark);
-            cursor: pointer;
-        }
-
-        /* Responsive Design */
+ /* Responsive Design */
         @media (max-width: 992px) {
             .about-grid,
             .contact-grid {
@@ -1034,17 +1026,44 @@ grid-template-columns: 1fr;
                 grid-template-columns: 1fr 1fr;
             }
         }
+        
+       .mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+}
 
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
+/* MOBILE MENU */
+@media (max-width: 768px) {
 
-            .nav-links,
-            .nav-cta {
-                display: none;
-            }
+    .mobile-menu-btn {
+        display: block;
+    }
 
+    .nav-links {
+        position: absolute;
+        top: 80px;
+        right: 20px;
+        background: white;
+        width: 220px;
+        flex-direction: column;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-cta {
+        display: none;
+    }
+}
             .hero h1 {
                 font-size: 2.5rem;
             }
@@ -1083,6 +1102,14 @@ grid-template-columns: 1fr;
         }
     </style>
 </head>
+    <script>
+const menuBtn = document.querySelector('.mobile-menu-btn');
+const navLinks = document.querySelector('.nav-links');
+
+menuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+</script>
 <body>
     <!-- Navigation -->
     <nav>
@@ -1110,7 +1137,7 @@ grid-template-columns: 1fr;
 
   <div class="hero-buttons">
     <a href="#products" class="btn-primary">Explore Products</a>
-    <a href="#contact" class="btn-secondary">Request Quote</a>
+    <a href="#cta" class="btn-secondary">Request Quote</a>
   </div>
 
   <div class="hero-stats">
