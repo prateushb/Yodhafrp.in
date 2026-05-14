@@ -1052,7 +1052,6 @@ grid-template-columns: 1fr;
         padding: 20px;
         border-radius: 15px;
         box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-
         display: none;
     }
 
@@ -1063,54 +1062,46 @@ grid-template-columns: 1fr;
     .nav-cta {
         display: none;
     }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+    }
+
+    .benefits-grid,
+    .products-grid,
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .frp-features {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .comparison-table {
+        overflow-x: auto;
+    }
 }
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-stats {
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .section-header h2 {
-                font-size: 2rem;
-            }
-
-            .benefits-grid,
-            .products-grid,
-            .testimonial-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .frp-features {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .social-links {
-                justify-content: center;
-            }
-
-            .comparison-table {
-                overflow-x: auto;
-            }
-        }
     </style>
 </head>
-    <script>
-const menuBtn = document.querySelector('.mobile-menu-btn');
-const navLinks = document.querySelector('.nav-links');
-
-menuBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-});
-</script>
-<body>
+   <body>
     <!-- Navigation -->
     <nav>
        <div class="logo">
@@ -1625,5 +1616,13 @@ function showSuccess() {
             }
         });
     </script>
+        <script>
+const menuBtn = document.querySelector('.mobile-menu-btn');
+const navLinks = document.querySelector('.nav-links');
+
+menuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+</script>
 </body>
 </html>
